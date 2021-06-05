@@ -1,0 +1,64 @@
+//========Переменные=============
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//========Переменные=============
+
+.app_wrapper {
+  display: grid;
+  grid-template-areas:
+    "h h"
+    "n c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+//============Ограничивающий Контейнер==========
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  @media (max-width: $md1+px) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+//============Ограничивающий Контейнер==========
+
+header.header {
+  grid-area: h;
+  background-color: green;
+  img {
+    width: 50px;
+  }
+}
+
+nav.nav {
+  grid-area: n;
+  background-color: yellow;
+  a {
+
+  }
+}
+
+.content {
+  grid-area: c;
+  background-color: #e35555;
+  img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+
+
+

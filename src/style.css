@@ -1,0 +1,50 @@
+.app_wrapper {
+  display: grid;
+  grid-template-areas: "h h" "n c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+@media (max-width: 1182px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767.98px) {
+  .container {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+header.header {
+  grid-area: h;
+  background-color: green;
+}
+header.header img {
+  width: 50px;
+}
+
+nav.nav {
+  grid-area: n;
+  background-color: yellow;
+}
+.content {
+  grid-area: c;
+  background-color: #e35555;
+}
+.content img {
+  height: 300px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
