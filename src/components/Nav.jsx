@@ -16,7 +16,7 @@ const Nav = () => {
             <a>Music</a>
         </div>
         <div>
-            <a>Settings menu</a>
+            <a>Settings</a>
         </div>
     </nav>
     );
