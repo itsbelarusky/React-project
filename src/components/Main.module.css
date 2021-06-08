@@ -1,6 +1,0 @@
-.main {
-    background: #84ffff;
-    grid-area: main;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-}

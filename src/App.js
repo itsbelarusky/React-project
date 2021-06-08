@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Main from "./components/Main/Main";
+import Footer from "./components/Footer/Footer";
 
 
 
