@@ -1,0 +1,20 @@
+header.navbar {
+    background: #a7ffeb;
+    grid-area: navbar;
+    display: flex;
+    border-radius:var(--main-radius) ;
+
+    align-items: center;
+    height: 5em;
+
+}
+
+.navbar img {
+   width: 50px;
+}
+.nav {
+    font-size: 20px;
+    margin-left: 0.5em;
+
+}
+

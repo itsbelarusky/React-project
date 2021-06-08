@@ -1,50 +1,76 @@
+:root {
+    --main-radius:5px;
+    --main-padding:5px;
+}
 .app_wrapper {
-  display: grid;
-  grid-template-areas: "h h" "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.3fr;
+    grid-template-areas:
+  'navbar navbar navbar navbar'
+  'sidebar main main content3'
+  'sidebar content1 content2 content3'
+  'footer footer footer footer';
+    grid-gap: 0.3rem;
+    width: 1200px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
 }
 
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-@media (max-width: 1182px) {
-  .container {
-    max-width: 970px;
-  }
-}
-@media (max-width: 991.98px) {
-  .container {
-    max-width: 750px;
-  }
-}
-@media (max-width: 767.98px) {
-  .container {
-    max-width: none;
-    padding: 0 10px;
-  }
+
+
+.content1 {
+    background: #6fffd2;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
-header.header {
-  grid-area: h;
-  background-color: green;
-}
-header.header img {
-  width: 50px;
-}
-
-nav.nav {
-  grid-area: n;
-  background-color: yellow;
-}
-.content {
-  grid-area: c;
-  background-color: #e35555;
-}
-.content img {
-  height: 300px;
-  width: 100%;
+.content2 {
+    background: #64ffda;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
-/*# sourceMappingURL=style.css.map */
+.content3 {
+    background: #73ffba;
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+/*==============Адаптив Mobile=====================*/
+@media only screen and (max-width: 550px) {
+    .app_wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas:
+        'navbar'
+        'sidebar'
+        'main'
+        'content1'
+        'content2'
+        'content3'
+        'footer';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

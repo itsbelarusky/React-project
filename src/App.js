@@ -1,19 +1,25 @@
 import React from 'react';
 import './style.css';
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Profile from "./components/Profile";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+
 
 
 const App = () => {
     return (
-        <div className="container">
+
             <div className='app_wrapper'>
-                <Header />
-                <Nav />
-                <Profile />
-            </div>
-        </div>);
+                <Navbar />
+                <Main />
+                <Sidebar />
+                <div className="content1">Content1</div>
+                <div className="content2">Content2</div>
+                <div className="content3">Content3</div>
+                <Footer />
+
+            </div>);
 }
 
 
