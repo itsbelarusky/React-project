@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Footer.module.css';
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <main className={s.footer}>
             <span>Footer</span>

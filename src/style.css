@@ -1,10 +1,12 @@
 :root {
-    --main-radius:5px;
-    --main-padding:5px;
+    --main-radius: 5px;
+    --main-padding: 5px;
 }
+
 body {
 
 }
+
 .app_wrapper {
     display: grid;
     height: 100vh;
@@ -12,15 +14,14 @@ body {
     grid-template-rows: 0.2fr 1.5fr 1.2fr 0.3fr;
     grid-template-areas:
   'navbar navbar navbar navbar'
-  'sidebar main main content3'
-  'sidebar myposts myposts content3'
+  'sidebar main main main'
+  'sidebar main main main'
   'footer footer footer footer';
     grid-gap: 0.3rem;
     width: 1100px;
     margin: 0 auto;
     font-family: "Inter", sans-serif;
     font-weight: 800;
-    text-transform: uppercase;
     font-size: 12px;
     color: #004d40;
     text-align: center;
@@ -28,23 +29,6 @@ body {
 }
 
 
-
-.myposts {
-    background: #6fffd2;
-    grid-area: myposts;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-}
-
-
-
-
-.content3 {
-    background: #73ffba;
-    grid-area: content3;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-}
 /*==============Адаптив Mobile=====================*/
 @media only screen and (max-width: 550px) {
     .app_wrapper {
@@ -60,7 +44,11 @@ body {
     }
 }
 
-
+.app-wrapper-content {
+    background: #1de9b6;
+    grid-area: main;
+    border-radius: var(--main-radius);
+}
 
 
 

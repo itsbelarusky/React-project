@@ -4,23 +4,23 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
-import MyPosts from "./components/Main/Myposts/MyPosts";
 
+import Dialogs from "./components/Dialogs/Dialogs";
 
 
 const App = () => {
     return (
 
-            <div className='app_wrapper'>
-                <Navbar />
-                <Main />
-                <Sidebar />
-                <MyPosts />
+        <div className='app_wrapper'>
+            <Navbar/>
+            <Sidebar/>
+            <div className='app-wrapper-content'>
+                {/*<Dialogs/>*/}
+            </div>
+            <Main />
+            <Footer/>
 
-                <div className="content3">Content3</div>
-                <Footer />
-
-            </div>);
+        </div>);
 }
 
 

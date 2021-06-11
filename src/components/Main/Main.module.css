@@ -1,6 +1,9 @@
 .main {
-    background:url("https://cdn.pixabay.com/photo/2015/07/15/11/45/spring-846051_960_720.jpg")0 0/cover no-repeat;
+
+    background: #a7ffeb;
     grid-area: main;
     border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
+}
+img {
+    width: 50px;
 }

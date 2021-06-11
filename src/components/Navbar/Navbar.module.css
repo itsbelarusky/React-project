@@ -3,7 +3,7 @@ header.navbar {
     grid-area: navbar;
     display: flex;
     border-radius:var(--main-radius) ;
-
+    text-transform: uppercase;
     align-items: center;
     height: 5em;
 
