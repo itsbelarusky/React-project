@@ -1,0 +1,9 @@
+.myposts {
+    background: #a7ffeb;
+    grid-area: myposts;
+    border-radius: var(--main-radius);
+
+}
+textarea {
+    margin-top: 10px;
+}

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
+import MyPosts from "./components/Main/Myposts/MyPosts";
 
 
 
@@ -14,8 +15,8 @@ const App = () => {
                 <Navbar />
                 <Main />
                 <Sidebar />
-                <div className="content1">Content1</div>
-                <div className="content2">Content2</div>
+                <MyPosts />
+
                 <div className="content3">Content3</div>
                 <Footer />
 

@@ -13,7 +13,7 @@ body {
     grid-template-areas:
   'navbar navbar navbar navbar'
   'sidebar main main content3'
-  'sidebar content1 content2 content3'
+  'sidebar myposts myposts content3'
   'footer footer footer footer';
     grid-gap: 0.3rem;
     width: 1100px;
@@ -29,19 +29,15 @@ body {
 
 
 
-.content1 {
+.myposts {
     background: #6fffd2;
-    grid-area: content1;
+    grid-area: myposts;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
-.content2 {
-    background: #64ffda;
-    grid-area: content2;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-}
+
+
 
 .content3 {
     background: #73ffba;
@@ -58,8 +54,7 @@ body {
         'navbar'
         'sidebar'
         'main'
-        'content1'
-        'content2'
+        'myPosts'
         'content3'
         'footer';
     }

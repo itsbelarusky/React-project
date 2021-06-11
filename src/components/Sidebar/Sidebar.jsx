@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './Sidebar.module.css';
+
 const Sidebar = () => {
     return (
         <nav className={s.sidebar}>
-
             <ul className={s.list}>
                 <li>Моя страница</li>
                 <li>Сообщения</li>
@@ -13,10 +13,7 @@ const Sidebar = () => {
                 <li>Фотографии</li>
                 <li>Музыка</li>
             </ul>
-
-
         </nav>
-
     );
 };
 
