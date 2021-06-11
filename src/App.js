@@ -16,8 +16,9 @@ const App = () => {
             <Sidebar/>
             <div className='app-wrapper-content'>
                 {/*<Dialogs/>*/}
+                <Main />
             </div>
-            <Main />
+
             <Footer/>
 
         </div>);
