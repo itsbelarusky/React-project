@@ -13,6 +13,7 @@
     padding: 10px;
 }
 
+
 /*=====Блок сообщения=====*/
 .messages {
     padding: 10px;
@@ -20,4 +21,14 @@
 
 .messages .message {
     padding: 10px;
+}
+
+
+.dialogsItem a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.dialogsItem a:hover {
+    color: red;
 }
