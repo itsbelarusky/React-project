@@ -1,6 +1,7 @@
 .footer {
-    background: #1de9b6;
+    background: #304159;
     grid-area: footer;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+
 }

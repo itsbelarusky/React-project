@@ -6,9 +6,9 @@ const Navbar = (props) => {
 
         <header className={s.navbar}>
 
-            <p><img src="https://img.icons8.com/fluent/144/000000/prodigy.png"/></p>
+            <p><img src="https://cdn1.iconfinder.com/data/icons/aami-flat-message-bubbles/64/message-45-256.png"/></p>
             <p className={s.nav}>
-                GreenChat.com
+                Cloudchat.com
             </p>
 
         </header>

@@ -1,6 +1,6 @@
 :root {
-    --main-radius: 5px;
-    --main-padding: 5px;
+    --main-radius: 2px;
+    --main-padding: 2px;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     display: grid;
     height: 100vh;
     grid-template-columns: 0.8fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.3fr;
+    grid-template-rows: 0.1fr 1.5fr 1.2fr 0.3fr;
     grid-template-areas:
   'navbar navbar navbar navbar'
   'sidebar main main main'
@@ -24,28 +24,16 @@ body {
     font-weight: 800;
     font-size: 12px;
     color: #004d40;
-    text-align: center;
+
 
 }
 
 
 /*==============Адаптив Mobile=====================*/
-@media only screen and (max-width: 550px) {
-    .app_wrapper {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
-        grid-template-areas:
-        'navbar'
-        'sidebar'
-        'main'
-        'myPosts'
-        'content3'
-        'footer';
-    }
-}
+
 
 .app-wrapper-content {
-    background: #1de9b6;
+
     grid-area: main;
     border-radius: var(--main-radius);
 }

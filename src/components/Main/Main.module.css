@@ -1,6 +1,6 @@
 .main {
 
-    background: #a7ffeb;
+    background: #f0f2f7;
     grid-area: main;
     border-radius: var(--main-radius);
 }

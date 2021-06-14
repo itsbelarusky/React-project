@@ -1,16 +1,20 @@
 nav.sidebar {
-    background: #a7ffeb;
+    background: #f0f2f7;
     grid-area: sidebar;
-    border-radius: var(--main-radius);
+    border-radius:var(--main-radius) ;
     display: flex;
 
-
-
-
-
-
+}
+/*=======Цвет ссылок при нажатии============*/
+.list a.activeLink {
+    color: #484fec;
 }
 
+
+.list li a {
+    text-decoration: none;
+    color: #000000;
+}
 .list li {
     font-size: 16px;
     padding: 0 0 0 36px;
@@ -20,6 +24,7 @@ nav.sidebar {
     display: flex;
     text-transform: none;
     font-weight: 700;
+    text-decoration: none;
 
 
 }
