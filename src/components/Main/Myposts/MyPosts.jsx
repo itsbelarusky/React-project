@@ -17,6 +17,8 @@ const MyPosts = (props) => {
             <Post finger='Props 3!!!!'/>
 
 
+
+
         </div>
 
     )
