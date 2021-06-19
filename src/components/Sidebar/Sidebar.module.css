@@ -15,6 +15,10 @@ nav.sidebar {
     text-decoration: none;
     color: #000000;
 }
+.list li a:hover {
+    font-size: 19px;
+    color: #484fec;
+}
 .list li {
     font-size: 16px;
     padding: 0 0 0 36px;

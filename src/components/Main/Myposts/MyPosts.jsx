@@ -4,19 +4,31 @@ import Post from "./Post/Post";
 
 
 const MyPosts = (props) => {
-    return (
 
+    let posts = [
+        {id: 1, message: 'Hi React is good', likesCount: 23},
+        {id: 2, message: 'Matafaka', likesCount: 22},
+        {id: 2, message: 'Diana go to the club', likesCount: 22}
+    ]
+
+    let postsElements = posts
+        .map(p => <Post message={p.message} likesCount={p.likesCount} />);
+
+    return (
         <div className={s.myposts}>
-            <textarea name="" id="" cols="40" rows="2">Enter</textarea>
+            <div>
+                My posts
+            </div>
+            <div>
+                <textarea name="" id="" cols="40" rows="2">Enter</textarea>
+            </div>
             <span>like</span>
             {/*Вызываем контент пропсов*/}
-            <Post message='Hi React its good!' likesCount='23'/>
-            <Post message='Matafaka!!!' likesCount='0'/>
+            <div>
+            { postsElements }
+            </div>
+
             <Post finger='Hello FINGER!!!!'/>
-            <Post finger='Props 2!!!!'/>
-            <Post finger='Props 3!!!!'/>
-
-
 
 
         </div>

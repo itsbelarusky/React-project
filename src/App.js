@@ -21,6 +21,8 @@ const App = () => {
                 {/*создаем оболочку будущих страниц и пихаем компоненты*/}
                 <div className='app-wrapper-content'>
                     {/*маршрутизация(путь к компонентам)*/}
+                    <Route>
+                        
                     <Route path='/dialogs' component={Dialogs} />
                     <Route path='/main' component={Main} />
                     <Route path='/friends' component={Friends} />
@@ -28,6 +30,7 @@ const App = () => {
                     <Route path='/news' component={News} />
                     <Route path='/foto' component={Foto} />
                     <Route path='/music' component={Music} />
+                    </Route>
                 </div>
                 <Footer/>
             </div>
