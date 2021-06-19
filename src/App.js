@@ -12,7 +12,12 @@ import News from "./components/News/News";
 import Foto from "./components/Foto/Foto";
 import Music from "./components/Music/Music";
 
-const App = () => {
+
+
+
+const App = (props) => {
+
+
     return (
         <BrowserRouter>
             <div className='app_wrapper'>
@@ -21,16 +26,14 @@ const App = () => {
                 {/*создаем оболочку будущих страниц и пихаем компоненты*/}
                 <div className='app-wrapper-content'>
                     {/*маршрутизация(путь к компонентам)*/}
-                    <Route>
-                        
-                    <Route path='/dialogs' component={Dialogs} />
-                    <Route path='/main' component={Main} />
-                    <Route path='/friends' component={Friends} />
-                    <Route path='/community' component={Community} />
-                    <Route path='/news' component={News} />
-                    <Route path='/foto' component={Foto} />
-                    <Route path='/music' component={Music} />
-                    </Route>
+
+                    <Route path='/dialogs' render={ () => <Dialogs /> } />
+                    <Route path='/main' render={ () => <Main posts={props.posts} /> } />
+                    <Route path='/friends' render={ () => <Friends /> } />
+                    <Route path='/community' render={ () => <Community /> } />
+                    <Route path='/news' render={ () => <News /> } />
+                    <Route path='/foto' render={ () => <Foto /> } />
+                    <Route path='/music' render={ () => <Music /> } />
                 </div>
                 <Footer/>
             </div>

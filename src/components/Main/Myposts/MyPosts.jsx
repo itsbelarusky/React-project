@@ -5,14 +5,9 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let posts = [
-        {id: 1, message: 'Hi React is good', likesCount: 23},
-        {id: 2, message: 'Matafaka', likesCount: 22},
-        {id: 2, message: 'Diana go to the club', likesCount: 22}
-    ]
 
-    let postsElements = posts
-        .map(p => <Post message={p.message} likesCount={p.likesCount} />);
+    let postsElements =
+            props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
     return (
         <div className={s.myposts}>
@@ -25,7 +20,7 @@ const MyPosts = (props) => {
             <span>like</span>
             {/*Вызываем контент пропсов*/}
             <div>
-            { postsElements }
+                {postsElements}
             </div>
 
             <Post finger='Hello FINGER!!!!'/>
