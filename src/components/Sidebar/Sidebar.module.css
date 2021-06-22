@@ -1,77 +1,69 @@
+@charset "UTF-8";
 nav.sidebar {
-    background: #f0f2f7;
-    grid-area: sidebar;
-    border-radius:var(--main-radius) ;
-    display: flex;
-
+  background: #f0f2f7;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  display: flex;
 }
+
 /*=======Цвет ссылок при нажатии============*/
 .list a.activeLink {
-    color: #484fec;
+  color: #484fec;
 }
-
 
 .list li a {
-    text-decoration: none;
-    color: #000000;
+  text-decoration: none;
+  color: #000000;
 }
+
 .list li a:hover {
-    font-size: 19px;
-    color: #484fec;
+  font-size: 19px;
+  color: #484fec;
 }
+
 .list li {
-    font-size: 16px;
-    padding: 0 0 0 36px;
-    margin: 15px 0 20px 0;
-    line-height: 22px;
-
-    display: flex;
-    font-weight: 700;
-
-
-
+  font-size: 16px;
+  padding: 0 0 0 36px;
+  margin: 15px 0 20px 0;
+  line-height: 22px;
+  display: flex;
+  font-weight: 700;
 }
-.list li:last-child {
-
-
-
-
- }
 
 /*=========================Список навигации сайдбара======================*/
 .list li:nth-child(1) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/user-male.png") left no-repeat;
-    background-size: 27px;
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/user-male.png") left no-repeat;
+  background-size: 27px;
 }
 
 .list li:nth-child(2) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/scroll-1.png") left no-repeat;
-    background-size: 27px;
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/scroll-1.png") left no-repeat;
+  background-size: 27px;
 }
+
 .list li:nth-child(3) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/contacts.png") left no-repeat;
-    background-size: 27px;
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/contacts.png") left no-repeat;
+  background-size: 27px;
 }
+
 .list li:nth-child(4) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/myspace-squared.png") left no-repeat;
-    background-size: 27px;
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/myspace-squared.png") left no-repeat;
+  background-size: 27px;
 }
+
 .list li:nth-child(5) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/news.png") left no-repeat;
-    background-size: 27px;
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/news.png") left no-repeat;
+  background-size: 27px;
 }
+
 .list li:nth-child(6) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/instagram-new--v1.png") left no-repeat;
-    background-size: 27px;
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/instagram-new--v1.png") left no-repeat;
+  background-size: 27px;
 }
+
 .list li:nth-child(7) {
-    background: url("https://img.icons8.com/fluent-systems-regular/48/000000/music.png") left no-repeat;
-    background-size: 27px;
-
-
-
+  background: url("https://img.icons8.com/fluent-systems-regular/48/000000/music.png") left no-repeat;
+  background-size: 27px;
 }
 
-
-
-
+/*# sourceMappingURL=Sidebar.module.css.map */

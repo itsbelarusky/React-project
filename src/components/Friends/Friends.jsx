@@ -1,11 +1,11 @@
 import React from "react";
-import s from './Friends.module.css';
+import s from './Friends.module.scss';
 import FriendsItem from "./FriendsItem/FriendsItem";
 
 
 const Friends = (props) => {
 
-    let friendsElements = props.friends
+    let friendsElements = props.state.friends
         .map (f => <FriendsItem name={f.name} id={f.id} />);
 
 

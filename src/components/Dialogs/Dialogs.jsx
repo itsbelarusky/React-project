@@ -1,17 +1,17 @@
 import React from "react";
-import s from './Dialogs.module.css';
+import s from './Dialogs.module.scss';
 import DialogsItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
 
-    let dialogsElements = props.dialogs
+    let dialogsElements = props.state.dialogs
         .map(d => <DialogsItem name={d.name} id={d.id}/>);
 
 
     //Мапим messages в новый массив
-    let messageElements = props.messages
+    let messageElements = props.state.messages
         .map(m => <Message message={m.message}/>);
 
 

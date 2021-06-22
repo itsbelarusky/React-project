@@ -1,0 +1,10 @@
+.footer {
+    background: #304159;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    span {
+        color: white;
+
+    }
+}

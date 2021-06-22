@@ -1,10 +1,10 @@
 import React from "react";
-import s from './Community.module.css';
+import s from './Community.module.scss';
 import CommunityItem from "./CommunityItem/CommunityItem";
 
 const Community = (props) => {
 
-    let communityElements = props.community
+    let communityElements = props.state.community
         .map (c => <CommunityItem name={c.name} id={c.id} />);
 
     return (

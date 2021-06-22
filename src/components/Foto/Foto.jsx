@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Foto.module.css';
+import s from './Foto.module.scss';
 
 const Foto = (props) => {
     return (

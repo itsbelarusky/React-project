@@ -27,10 +27,10 @@ const App = (props) => {
                 <div className='app-wrapper-content'>
                     {/*маршрутизация(путь к компонентам)*/}
 
-                    <Route path='/dialogs' render={ () => <Dialogs dialogs={props.dialogs} messages={props.messages} /> } />
-                    <Route path='/main' render={ () => <Main posts={props.posts} /> } />
-                    <Route path='/friends' render={ () => <Friends friends={props.friends} /> } />
-                    <Route path='/community' render={ () => <Community community={props.community} /> } />
+                    <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
+                    <Route path='/main' render={ () => <Main state={props.state.mainPage} /> } />
+                    <Route path='/friends' render={ () => <Friends state={props.state.friendsPage} /> } />
+                    <Route path='/community' render={ () => <Community state={props.state.communityPage} /> } />
                     <Route path='/news' render={ () => <News /> } />
                     <Route path='/foto' render={ () => <Foto /> } />
                     <Route path='/music' render={ () => <Music /> } />

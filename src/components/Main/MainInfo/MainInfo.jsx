@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './MainInfo.module.css';
+import s from './MainInfo.module.scss';
 
 
 const MainInfo = () => {

@@ -1,0 +1,25 @@
+.navbar {
+    background: #304159;
+    grid-area: navbar;
+    display: flex;
+    border-radius:var(--main-radius) ;
+    text-transform: uppercase;
+    align-items: center;
+    height: 60px;
+    color: #e3e5e7;
+
+
+}
+
+.navbar img {
+   width: 50px;
+
+
+}
+.nav {
+    font-size: 20px;
+    padding-left: 0.5em;
+
+
+}
+

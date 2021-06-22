@@ -1,9 +1,11 @@
 .main {
+  background: #f0f2f7;
+  grid-area: main;
+  border-radius: var(--main-radius);
+}
 
-    background: #f0f2f7;
-    grid-area: main;
-    border-radius: var(--main-radius);
-}
 img {
-    width: 50px;
+  width: 50px;
 }
+
+/*# sourceMappingURL=Main.module.css.map */

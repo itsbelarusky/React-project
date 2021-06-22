@@ -1,7 +1,11 @@
 .footer {
-    background: #304159;
-    grid-area: footer;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
-
+  background: #304159;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
 }
+.footer span {
+  color: white;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */
