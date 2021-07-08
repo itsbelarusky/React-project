@@ -43,10 +43,12 @@ let state = {
             {id: 2, name: 'Anekdots'},
             {id: 3, name: 'Leonardo dai vinchik'},
             {id: 4, name: 'Cars Motors'},
-            {id: 5, name: 'Sex chats'}
+            {id: 5, name: 'Funny chats'}
         ]
     }
 
 };
+
+
 
 export default state;
