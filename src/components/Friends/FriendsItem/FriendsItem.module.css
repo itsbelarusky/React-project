@@ -1,3 +1,20 @@
-
+.friendsItem {
+  padding: 30px;
+}
+.friendsItem li {
+  list-style-type: none;
+}
+.friendsItem li:nth-child(1) {
+  background: url("https://sun1.beltelecom-by-minsk.userapi.com/s/v1/ig2/RGUNec39ythCu4DFebEpH0v8Ty8jw6BJXf2Ps4pUJaNgtutl_yNDZ1USjkcHU8f-TccsxH5kHYNx1ug-yqtO7d5X.jpg?size=200x0&quality=96&crop=100,194,215,215&ava=1") left no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+.friendsItem li:nth-child(1):nth-child(2) {
+  background: url("https://sun2.beltelecom-by-minsk.userapi.com/s/v1/ig2/c6qrXLbFDxOtUMSTEXixKjorIwIgUe-o0cleISWrtv5nZkszoHY9V4QEAEMOJDjqCEENakSiq8PqFBnYdZPeQYur.jpg?size=200x0&quality=96&crop=5,5,1201,1201&ava=1") left no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
 
 /*# sourceMappingURL=FriendsItem.module.css.map */

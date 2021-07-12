@@ -4,7 +4,7 @@ let state = {
     mainPage: {
         posts: [
             {id: 1, message: 'Hi React is good', likesCount: 23},
-            {id: 2, message: 'Matafaka', likesCount: 22},
+            {id: 2, message: 'Matafaka', likesCount: 21},
             {id: 2, message: 'Diana go to the club', likesCount: 22}
         ],
 
