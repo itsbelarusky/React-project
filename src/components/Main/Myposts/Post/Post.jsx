@@ -3,15 +3,13 @@ import s from './Post.module.scss';
 const Post = (props) => {
     return (
 
-        <div className={s.post}>
+        <div className={s.container}>
+            <div className={s.post}>
             {props.message}
             <div>
-            <span>like</span> {props.likesCount}
+            <div>like {props.likesCount}</div>
             </div>
-            <div className={s.finger}>
-                {props.finger}
             </div>
-
         </div>
     )
 };

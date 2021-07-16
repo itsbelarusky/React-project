@@ -9,7 +9,7 @@ const MyPosts = (props) => {
 
     let addPosts = () => {
         let text = newPostElement.current.value;
-        alert(text);
+        props.addPost(text);
     }
 
 
@@ -22,7 +22,7 @@ const MyPosts = (props) => {
                 My posts
             </div>
             <div>
-                <textarea ref={newPostElement}></textarea>
+                <textarea ref={newPostElement}/>
             </div>
             <button onClick={addPosts}>add</button>
             {/*Вызываем контент пропсов*/}
@@ -30,7 +30,7 @@ const MyPosts = (props) => {
                 {postsElements}
             </div>
 
-            <Post finger='Hello FINGER!!!!'/>
+
 
 
         </div>

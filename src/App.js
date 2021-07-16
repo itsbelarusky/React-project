@@ -28,7 +28,7 @@ const App = (props) => {
                     {/*маршрутизация(путь к компонентам)*/}
 
                     <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
-                    <Route path='/main' render={ () => <Main state={props.state.mainPage} /> } />
+                    <Route path='/main' render={ () => <Main state={props.state.mainPage} addPost={props.addPost} /> } />
                     <Route path='/friends' render={ () => <Friends state={props.state.friendsPage} /> } />
                     <Route path='/community' render={ () => <Community state={props.state.communityPage} /> } />
                     <Route path='/news' render={ () => <News /> } />
