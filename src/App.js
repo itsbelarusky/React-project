@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Friends from "./components/Friends/Friends";
 import Community from "./components/Community/Community";
@@ -13,31 +13,29 @@ import Foto from "./components/Foto/Foto";
 import Music from "./components/Music/Music";
 
 
-
-
 const App = (props) => {
 
 
     return (
-        <BrowserRouter>
-            <div className='app_wrapper'>
-                <Navbar/>
-                <Sidebar/>
-                {/*создаем оболочку будущих страниц и пихаем компоненты*/}
-                <div className='app-wrapper-content'>
-                    {/*маршрутизация(путь к компонентам)*/}
 
-                    <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
-                    <Route path='/main' render={ () => <Main state={props.state.mainPage} addPost={props.addPost} /> } />
-                    <Route path='/friends' render={ () => <Friends state={props.state.friendsPage} /> } />
-                    <Route path='/community' render={ () => <Community state={props.state.communityPage} /> } />
-                    <Route path='/news' render={ () => <News /> } />
-                    <Route path='/foto' render={ () => <Foto /> } />
-                    <Route path='/music' render={ () => <Music /> } />
-                </div>
-                <Footer/>
+        <div className='app_wrapper'>
+            <Navbar/>
+            <Sidebar/>
+            {/*создаем оболочку будущих страниц и пихаем компоненты*/}
+            <div className='app-wrapper-content'>
+                {/*маршрутизация(путь к компонентам)*/}
+
+                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                <Route path='/main' render={() => <Main mainPage={props.state.mainPage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
+                <Route path='/friends' render={() => <Friends state={props.state.friendsPage}/>}/>
+                <Route path='/community' render={() => <Community state={props.state.communityPage}/>}/>
+                <Route path='/news' render={() => <News/>}/>
+                <Route path='/foto' render={() => <Foto/>}/>
+                <Route path='/music' render={() => <Music/>}/>
             </div>
-        </BrowserRouter>);
+            <Footer/>
+        </div>
+    );
 }
 
 

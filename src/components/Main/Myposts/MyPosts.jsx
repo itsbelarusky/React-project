@@ -6,13 +6,18 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
-
+    /*================функция добавляющая новый пост в textarea===============*/
     let addPosts = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
+        props.addPost();
+        //==============зануляем поле ввода=====================
+
+    }
+    let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
     }
 
-
+    /*==================мапим посты==========================*/
     let postsElements =
             props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
@@ -22,17 +27,14 @@ const MyPosts = (props) => {
                 My posts
             </div>
             <div>
-                <textarea ref={newPostElement}/>
+                {/*============ связываем textarea с функцией ссылкой===============*/}
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
             </div>
             <button onClick={addPosts}>add</button>
-            {/*Вызываем контент пропсов*/}
+            {/*============Вызываем контент пропсов и добавляем посты на страницу==================*/}
             <div>
                 {postsElements}
             </div>
-
-
-
-
         </div>
 
     )
