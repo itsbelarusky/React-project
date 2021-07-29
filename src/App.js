@@ -13,6 +13,7 @@ import Foto from "./components/Foto/Foto";
 import Music from "./components/Music/Music";
 
 
+
 const App = (props) => {
 
 
@@ -25,7 +26,7 @@ const App = (props) => {
             <div className='app-wrapper-content'>
                 {/*маршрутизация(путь к компонентам)*/}
 
-                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} addMessageMessage={props.addMessageMessage} updateNewMessageText={props.updateNewMessageText}/>}/>
                 <Route path='/main' render={() => <Main mainPage={props.state.mainPage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
                 <Route path='/friends' render={() => <Friends state={props.state.friendsPage}/>}/>
                 <Route path='/community' render={() => <Community state={props.state.communityPage}/>}/>

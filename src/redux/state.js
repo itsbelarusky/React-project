@@ -1,5 +1,6 @@
-import {rerenderEntireTree} from "../render";
-
+let rerenderEntireTree = () => {
+    console.log('state changed');
+}
 
 let state = {
     mainPage: {
@@ -8,7 +9,7 @@ let state = {
             {id: 2, message: 'IT Kamasutra', likesCount: 21},
             {id: 2, message: 'Diana go to the club', likesCount: 22}
         ],
-        newPostText: ''
+        newPostText: 'it-kamasutra'
 
     },
     dialogsPage: {
@@ -18,16 +19,18 @@ let state = {
             {id: 3, message: 'Yo i am pro programmer'},
             {id: 4, message: 'I love play Pubg'}
         ],
+
         dialogs: [
             {id: 1, name: 'Evgeniy'},
             {id: 2, name: 'Diana'},
             {id: 3, name: 'Alina'},
             {id: 4, name: 'Maksim'},
-            {id: 5, name: 'Oleg'},
-            {id: 7, name: 'Vlad'},
-            {id: 8, name: 'Vlad'},
-            {id: 9, name: 'Vlad'}
-        ]
+            {id: 5, name: 'Maksim'},
+            {id: 6, name: 'Maksim'},
+            {id: 7, name: 'Maksim'},
+
+        ],
+        newMessageText: 'dadadad'
     },
     friendsPage: {
         friends: [
@@ -51,20 +54,42 @@ let state = {
 
 };
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.mainPage.newPostText,
         likesCount: 0
     };
+
     state.mainPage.posts.push(newPost);
+    //==============зануляем поле ввода=====================
     state.mainPage.newPostText = '';
     rerenderEntireTree(state);
 }
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.mainPage.newPostText = newText;
     rerenderEntireTree(state);
+}
 
+
+export const addMessageMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText,
+        likesCount: 0
+    };
+
+
+    state.dialogsPage.messages.push(newMessage);
+    rerenderEntireTree(state);
+}
+export const updateNewMessageText = (newMessages) => {
+    state.dialogsPage.newMessageText = newMessages;
+    rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;

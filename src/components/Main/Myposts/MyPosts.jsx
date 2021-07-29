@@ -9,12 +9,11 @@ const MyPosts = (props) => {
     /*================функция добавляющая новый пост в textarea===============*/
     let addPosts = () => {
         props.addPost();
-        //==============зануляем поле ввода=====================
-
     }
+
     let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
     }
 
     /*==================мапим посты==========================*/
