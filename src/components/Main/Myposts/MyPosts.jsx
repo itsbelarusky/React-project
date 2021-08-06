@@ -1,6 +1,9 @@
 import React from 'react';
 import s from './MyPosts.module.scss';
 import Post from "./Post/Post";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+
+
 
 
 const MyPosts = (props) => {
@@ -8,12 +11,12 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
     /*================функция добавляющая новый пост в textarea===============*/
     let addPosts = () => {
-        props.addPost();
+        props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     /*==================мапим посты==========================*/
