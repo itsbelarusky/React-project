@@ -5,12 +5,13 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import {Route} from "react-router-dom";
-import Dialogs from "./components/Dialogs/Dialogs";
-import Friends from "./components/Friends/Friends";
 import Community from "./components/Community/Community";
 import News from "./components/News/News";
 import Foto from "./components/Foto/Foto";
 import Music from "./components/Music/Music";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import FriendsContainer from "./components/Friends/FriendsContainer";
+
 
 
 
@@ -26,10 +27,10 @@ const App = (props) => {
             <div className='app-wrapper-content'>
                 {/*маршрутизация(путь к компонентам)*/}
 
-                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />}/>
-                <Route path='/main' render={() => <Main mainPage={props.state.mainPage} dispatch={props.dispatch} />}/>
-                <Route path='/friends' render={() => <Friends state={props.state.friendsPage}/>}/>
-                <Route path='/community' render={() => <Community state={props.state.communityPage}/>}/>
+                <Route path='/dialogs' render={() => <DialogsContainer />}/>
+                <Route path='/main' render={() => <Main />}/>
+                <Route path='/friends' render={() => <FriendsContainer/>}/>
+                <Route path='/community' render={() => <Community />}/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/foto' render={() => <Foto/>}/>
                 <Route path='/music' render={() => <Music/>}/>

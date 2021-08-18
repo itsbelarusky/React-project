@@ -1,6 +1,7 @@
 import React from 'react';
-import MyPosts from "./Myposts/MyPosts";
 import MainInfo from "./MainInfo/MainInfo";
+import MyPostsContainer from "./Myposts/MyPostsContainer";
+import store from "../../redux/redux-store";
 
 const Main = (props) => {
 
@@ -8,7 +9,7 @@ const Main = (props) => {
     return (
         <div>
             <MainInfo/>
-            <MyPosts posts={props.mainPage.posts} dispatch={props.dispatch} />
+            <MyPostsContainer />
         </div>
 
     )

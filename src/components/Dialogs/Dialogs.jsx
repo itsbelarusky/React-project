@@ -4,27 +4,25 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
 
 
+
+
 const Dialogs = (props) => {
 
-    let newMessageElement = React.createRef();
-    let addMessage = () => {
-        props.dispatch({type: 'ADD-MESSAGE'});
-    }
+    let state = props.dialogsPage;
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.dispatch({type: 'ADD-NEW-MESSAGE', newMessages: text});
-    }
-
-
-    let dialogsElements = props.state.dialogs
-        .map(d => <DialogsItem name={d.name} id={d.id}/>);
-
-
+    let dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id}/>);
     //Мапим messages в новый массив
-    let messageElements = props.state.messages
-        .map(m => <Message message={m.message}/>);
+    let messageElements = state.messages.map(m => <Message message={m.message}/>);
+    let newMessageText = state.newMessageText;
 
+    let addMessage = () => {
+        props.addMessage();
+    }
+
+    let onMessageChange = (e) => {
+        let newText = e.target.value;
+        props.updateNewMessage(newText)
+    }
 
     return (
         <div className={s.dialogs}>
@@ -32,10 +30,10 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={s.messages}>
-                {messageElements}
+                <div>{messageElements}</div>
             </div>
             <div>
-                <textarea onChange={onMessageChange} ref={newMessageElement} value={props.newMessageText}/>
+                <textarea onChange={onMessageChange}  value={newMessageText}/>
                 <div>
                     <button onClick={addMessage}>add message</button>
                 </div>
