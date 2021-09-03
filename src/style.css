@@ -1,4 +1,8 @@
+
+
+
 :root {
+
     --main-radius: 2px;
     --main-padding: 2px;
 }
@@ -9,9 +13,8 @@ body {
 
 .app_wrapper {
     display: grid;
-
     grid-template-columns: 0.8fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 1.5fr 1.2fr 0.3fr;
+    grid-template-rows: 0.01fr 1.5fr 1.2fr 0.1fr;
     grid-template-areas:
   'navbar navbar navbar navbar'
   'sidebar main main main'

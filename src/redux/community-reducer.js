@@ -10,6 +10,10 @@ let initialState = {
 
 
 const communityReducer = (state = initialState, action) => {
-    return state;
+    return {
+        ...state,
+        community: {...state.community}
+
+    }
 }
 export default communityReducer;

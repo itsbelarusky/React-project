@@ -1,23 +1,41 @@
-.wrapper {
-  display: flex;
-  margin: 10px;
-}
-
-.container2 {
-  margin: 0px 0px 0px 110px;
-}
-
 .userFoto {
   width: 80px;
   height: 80px;
 }
 
-.container1 {
+.wrapper {
+  display: flex;
+  margin: 20px 0 0 0;
+}
+
+.container2 {
   display: flex;
 }
 
-.userItem {
-  margin-left: 20px;
+.container_item {
+  margin: 25px 50px 0 10px;
+}
+
+.button {
+  margin: 0 0 20px 0;
+}
+
+.selectedPage {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+}
+.selectedPage:hover {
+  cursor: pointer;
+}
+
+span {
+  margin-right: 2px;
+  font-weight: 600;
+  font-size: 17px;
+}
+span:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=Friends.module.css.map */
