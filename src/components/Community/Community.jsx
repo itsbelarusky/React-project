@@ -1,17 +1,11 @@
-import React from "react";
-import CommunityItem from "./CommunityItem/CommunityItem";
+import React from 'react';
 
-const Community = (props) => {
-
-    let communityElements = props.community
-        .map (c => <CommunityItem name={c.name} id={c.id} />);
-
+const Community = () => {
     return (
         <div>
-            { communityElements }
+            Community
         </div>
-
-    )
-}
+    );
+};
 
 export default Community;

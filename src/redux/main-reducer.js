@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const ADD_NEW_POST_TEXT = 'ADD-NEW-POST-TEXT';
+const SET_FRIEND_PROFILE = 'SET_FRIEND_PROFILE';
 
 let initialState = {
     posts: [
@@ -7,7 +8,8 @@ let initialState = {
         {id: 2, message: 'IT Kamasutra', likesCount: 21},
         {id: 3, message: 'Diana go to the club', likesCount: 22}
     ],
-    newPostText: ""
+    newPostText: "",
+    main: null
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -30,11 +32,15 @@ const mainReducer = (state = initialState, action) => {
                 ...state,
                 newPostText: action.newText
             }
+        case SET_FRIEND_PROFILE: {
+            return {...state, main: action.main}
+        }
         default:
             return state;
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = (text) => ({type: ADD_NEW_POST_TEXT, newText: text});
+export const addPosts = () => ({type: ADD_POST});
+export const setFriendsProfile = (main) => ({type: SET_FRIEND_PROFILE, main});
+export const updateNewPostText = (text) => ({type: ADD_NEW_POST_TEXT, newText: text});
 export default mainReducer;

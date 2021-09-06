@@ -38,4 +38,9 @@ span:hover {
   cursor: pointer;
 }
 
+.loader {
+  width: 67px;
+  height: 67px;
+}
+
 /*# sourceMappingURL=Friends.module.css.map */
