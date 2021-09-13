@@ -1,24 +1,39 @@
 .navbar {
-    background: #304159;
-    grid-area: navbar;
-    display: flex;
-    border-radius:var(--main-radius) ;
-    text-transform: uppercase;
-    align-items: center;
-    height: 60px;
-    color: #e3e5e7;
+  background: #304159;
+  grid-area: navbar;
+  display: flex;
+  border-radius: var(--main-radius);
+  text-transform: uppercase;
+  align-items: center;
+  height: 60px;
+  color: #e3e5e7;
 
 
 }
 
 .navbar img {
-   width: 50px;
+  width: 50px;
 
 
 }
+
 .nav {
-    font-size: 20px;
-    padding-left: 0.5em;
+  font-size: 20px;
+  padding-left: 0.5em;
+
+
+}
+
+.loginBlock {
+  margin-left: 75vh;
+  text-transform: none;
+  a{
+    color: #e3e5e7;
+    text-decoration: none;
+
+
+  }
+
 
 
 }

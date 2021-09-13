@@ -19,7 +19,7 @@ const mainReducer = (state = initialState, action) => {
             let newPost = {
                 id: 4,
                 message: state.newPostText,
-                likesCount: 0
+                likesCount: 1
             };
             //============Делаем копию массива=============
             return {

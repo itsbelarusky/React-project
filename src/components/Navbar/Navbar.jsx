@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Navbar.module.scss';
+import {NavLink} from "react-router-dom";
 
 const Navbar = (props) => {
     return (
@@ -10,6 +11,10 @@ const Navbar = (props) => {
             <p className={s.nav}>
                 Cloudchat.com
             </p>
+            <div className={s.loginBlock}>
+                {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
+
+            </div>
 
         </header>
 

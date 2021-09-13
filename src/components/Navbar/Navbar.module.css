@@ -18,4 +18,13 @@
   padding-left: 0.5em;
 }
 
+.loginBlock {
+  margin-left: 75vh;
+  text-transform: none;
+}
+.loginBlock a {
+  color: #e3e5e7;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=Navbar.module.css.map */

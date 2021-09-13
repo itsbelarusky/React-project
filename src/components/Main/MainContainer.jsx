@@ -3,12 +3,17 @@ import Main from "./Main";
 import axios from "axios";
 import {connect} from "react-redux";
 import {setFriendsProfile} from "../../redux/main-reducer";
+import {withRouter} from "react-router-dom";
 
 
 
 class MainContainer extends React.Component {
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {
+        let userId = this.props.match.params.userId;
+       if (!userId) {
+           userId = 2
+       }
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId).then(response => {
             this.props.setFriendsProfile(response.data);
         });
     }
@@ -16,14 +21,16 @@ class MainContainer extends React.Component {
     render() {
         return (
             <div>
-                <Main {...this.props} />
+                <Main {...this.props} main={this.props.main} />
             </div>
         )
     }
 };
 
 let mapStateToProps = (state) => ({
-    a: 13
+    main: state.mainPage.main
 })
 
-export default connect(mapStateToProps, {setFriendsProfile})(MainContainer)
+let WithUrlDataContainerComponent = withRouter(MainContainer);
+
+export default connect(mapStateToProps, {setFriendsProfile})(WithUrlDataContainerComponent)
