@@ -11,15 +11,16 @@ import {
 import * as axios from 'axios';
 import Friends from './Friends';
 import Preloader from "../common/Preloader/Preloader";
+import {getFriends} from "../../Api/api";
 
 class FriendsContainer extends React.Component {
     //============Аякс запрос на сервак=====================
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+       getFriends(this.props.currentPage, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
-            this.props.setFriends(response.data.items);
-            this.props.setTotalFriendsCount(response.data.totalCount);
+            this.props.setFriends(data.items);
+            this.props.setTotalFriendsCount(data.totalCount);
 
         });
     }
@@ -27,9 +28,10 @@ class FriendsContainer extends React.Component {
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
+
+        getFriends(pageNumber, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
-            this.props.setFriends(response.data.items);
+            this.props.setFriends(data.items);
         });
     }
 
