@@ -1,10 +1,21 @@
 import * as axios from "axios";
 
-export const getFriends = (currentPage, pageSize) => {
-    return axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`, {
-        withCredentials: true
-    })
-        .then(response => {
-            return response.data;
-        })
+
+
+const instance = axios.create({
+    withCredentials: true,
+    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
+    headers: {
+        "API-KEY": "31cc9c9a-f3cc-445c-adfe-e74f84386c0b"
+    }
+})
+export const friendsAPI = {
+    getFriends(currentPage = 1, pageSize = 10){
+        return instance.get(`users?page=${currentPage}&count=${pageSize}`, {})
+            .then(response => {
+                return response.data;
+            })
+    }
 }
+
+

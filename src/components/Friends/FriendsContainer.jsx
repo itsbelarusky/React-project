@@ -8,16 +8,17 @@ import {
     toggleIsFetching,
     unfollow
 } from '../../redux/friends-reducer';
-import * as axios from 'axios';
+
 import Friends from './Friends';
 import Preloader from "../common/Preloader/Preloader";
-import {getFriends} from "../../Api/api";
+import {friendsAPI} from "../../Api/api";
+
 
 class FriendsContainer extends React.Component {
     //============Аякс запрос на сервак=====================
     componentDidMount() {
         this.props.toggleIsFetching(true);
-       getFriends(this.props.currentPage, this.props.pageSize).then(data => {
+        friendsAPI.getFriends(this.props.currentPage, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
             this.props.setFriends(data.items);
             this.props.setTotalFriendsCount(data.totalCount);
@@ -29,7 +30,7 @@ class FriendsContainer extends React.Component {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
 
-        getFriends(pageNumber, this.props.pageSize).then(data => {
+        friendsAPI.getFriends(pageNumber, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
             this.props.setFriends(data.items);
         });
@@ -38,14 +39,14 @@ class FriendsContainer extends React.Component {
     render() {
         return <>
             {this.props.isFetching ? <Preloader/> : null}
-        <Friends totalFriendsCount={this.props.totalFriendsCount}
-                        pageSize={this.props.pageSize}
-                        currentPage={this.props.currentPage}
-                        onPageChanged={this.onPageChanged}
-                        friends={this.props.friends}
-                        follow={this.props.follow}
-                        unfollow={this.props.unfollow}
-        />
+            <Friends totalFriendsCount={this.props.totalFriendsCount}
+                     pageSize={this.props.pageSize}
+                     currentPage={this.props.currentPage}
+                     onPageChanged={this.onPageChanged}
+                     friends={this.props.friends}
+                     follow={this.props.follow}
+                     unfollow={this.props.unfollow}
+            />
         </>
     }
 }
