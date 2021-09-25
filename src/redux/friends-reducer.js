@@ -1,10 +1,10 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_FRIENDS = 'SET_FRIENDS';
-const SET_CURRENT_PAGE= 'SET_CURRENT_PAGE';
-const SET_TOTAL_FRIENDS_COUNT= 'SET_TOTAL_FRIENDS_COUNT';
-const TOGGLE_IS_FETCHING= 'TOGGLE_IS_FETCHING';
-
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_FRIENDS_COUNT = 'SET_TOTAL_FRIENDS_COUNT';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+const FOLLOWING_IN_PROGRESS = 'FOLLOWING_IN_PROGRESS';
 
 
 let initialState = {
@@ -12,7 +12,8 @@ let initialState = {
     pageSize: 5,
     totalFriendsCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: true,
+    followingInProgress: []
 
 }
 
@@ -51,6 +52,11 @@ const friendsReducer = (state = initialState, action) => {
         case TOGGLE_IS_FETCHING: {
             return {...state, isFetching: action.isFetching}
         }
+        case FOLLOWING_IN_PROGRESS: {
+            return {...state, followingInProgress: action.isFetching
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter(id => id != action.userId)}
+        }
         default:
             return state
     }
@@ -61,8 +67,9 @@ const friendsReducer = (state = initialState, action) => {
 
 export const follow = (userId) => ({type: FOLLOW, userId});
 export const unfollow = (userId) => ({type: UNFOLLOW, userId});
-export const setFriends = (friends) => ({type: SET_FRIENDS, friends })
-export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage })
-export const setTotalFriendsCount = (totalFriendsCount) => ({type: SET_TOTAL_FRIENDS_COUNT, count: totalFriendsCount })
-export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching })
+export const setFriends = (friends) => ({type: SET_FRIENDS, friends})
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const setTotalFriendsCount = (totalFriendsCount) => ({type: SET_TOTAL_FRIENDS_COUNT, count: totalFriendsCount})
+export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+export const followingProgress = (isFetching, userId) => ({type: FOLLOWING_IN_PROGRESS, isFetching, userId})
 export default friendsReducer;

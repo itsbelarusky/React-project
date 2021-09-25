@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {
     follow,
+    followingProgress,
     setCurrentPage,
     setFriends,
     setTotalFriendsCount,
     toggleIsFetching,
     unfollow
 } from '../../redux/friends-reducer';
-
 import Friends from './Friends';
 import Preloader from "../common/Preloader/Preloader";
 import {friendsAPI} from "../../Api/api";
@@ -46,6 +46,9 @@ class FriendsContainer extends React.Component {
                      friends={this.props.friends}
                      follow={this.props.follow}
                      unfollow={this.props.unfollow}
+                     followingProgress={this.props.followingProgress}
+                     followingInProgress={this.props.followingInProgress}
+
             />
         </>
     }
@@ -57,37 +60,15 @@ let mapStateToProps = (state) => {
         pageSize: state.friendsPage.pageSize,
         totalFriendsCount: state.friendsPage.totalFriendsCount,
         currentPage: state.friendsPage.currentPage,
-        isFetching: state.friendsPage.isFetching
+        isFetching: state.friendsPage.isFetching,
+        followingInProgress: state.friendsPage.followingInProgress
     }
 }
 
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         },
-//         setFriends: (friends) => {
-//             dispatch(setFriendsAC(friends));
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         },
-//         setTotalFriendsCount: (totalCount) => {
-//             dispatch(setFriendsTotalCountAC(totalCount))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//
-//     }
-// }
 
 
 export default connect(mapStateToProps, {
-    follow, unfollow, setFriends, setCurrentPage, setTotalFriendsCount, toggleIsFetching
+    follow, unfollow, setFriends, setCurrentPage, setTotalFriendsCount, toggleIsFetching, followingProgress
 })(FriendsContainer);
 
 

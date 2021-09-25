@@ -29,32 +29,34 @@ let Friends = (props) => {
                             <NavLink to={'/main/' + f.id}><img className={s.userFoto}
                                                                src={f.photos.small != null ? f.photos.small : userPhoto}/></NavLink>
                             <div>
-                                {f.followed ? <button onClick={() => {
+                                {f.followed ? <button disabled={props.followingInProgress.some(id => id ===f.id)} onClick={() => {
+
+                                    props.followingProgress(true, f.id);
                                         axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${f.id}`, {
                                             withCredentials: true,
                                             headers: {
-                                                "API-KEY": "31cc9c9a-f3cc-445c-adfe-e74f84386c0b"
+                                                "API-KEY": "d52405ad-e4bc-4e26-b3f7-492e8f23c4bf"
                                             }
                                         }).then(response => {
                                             if (response.data.resultCode == 0) {
                                                 props.unfollow(f.id)
                                             }
+                                            props.followingProgress(false, f.id);
 
                                         });
-
-
                                     }}>Follow</button> :
-                                    <button onClick={() => {
+                                    <button disabled={props.followingInProgress.some(id => id ===f.id)} onClick={() => {
+                                        props.followingProgress(true, f.id)
                                         axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${f.id}`, {}, {
                                             withCredentials: true,
                                             headers: {
-                                                "API-KEY": "31cc9c9a-f3cc-445c-adfe-e74f84386c0b"
+                                                "API-KEY": "d52405ad-e4bc-4e26-b3f7-492e8f23c4bf"
                                             }
                                         }).then(response => {
                                             if (response.data.resultCode == 0) {
                                                 props.follow(f.id)
                                             }
-
+                                            props.followingProgress(false, f.id)
                                         });
 
                                         props.follow(f.id)
