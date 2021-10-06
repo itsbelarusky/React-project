@@ -1,3 +1,5 @@
+import {friendsAPI} from "../Api/api";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_FRIENDS = 'SET_FRIENDS';
@@ -72,4 +74,19 @@ export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, current
 export const setTotalFriendsCount = (totalFriendsCount) => ({type: SET_TOTAL_FRIENDS_COUNT, count: totalFriendsCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export const followingProgress = (isFetching, userId) => ({type: FOLLOWING_IN_PROGRESS, isFetching, userId})
+
+
+//=============thunk======================
+export const getFriendsThunkCreator = (currentPage, pageSize) =>{
+            return (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    friendsAPI.getFriends(currentPage, pageSize).then(data => {
+        dispatch(toggleIsFetching(false));
+        dispatch(setFriends(data.items));
+        dispatch(setTotalFriendsCount(data.totalCount));
+
+    });
+}
+}
+
 export default friendsReducer;
