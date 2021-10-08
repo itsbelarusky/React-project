@@ -11,6 +11,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import FriendsContainer from "./components/Friends/FriendsContainer";
 import MainContainer from "./components/Main/MainContainer";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
+import Login from "./components/Login/Login";
 
 
 
@@ -30,6 +31,7 @@ const App = (props) => {
                 <Route path='/dialogs' render={() => <DialogsContainer />}/>
                 <Route path='/main/:userId?' render={() => <MainContainer />}/>
                 <Route path='/friends' render={() => <FriendsContainer/>}/>
+                <Route path='/login' render={() => <Login/>}/>
                 <Route path='/community' render={() => <Community />}/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/foto' render={() => <Foto/>}/>

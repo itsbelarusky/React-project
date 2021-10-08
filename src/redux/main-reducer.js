@@ -1,3 +1,7 @@
+import {friendsAPI} from "../Api/api";
+import {setFriends, setTotalFriendsCount, toggleIsFetching} from "./friends-reducer";
+
+
 const ADD_POST = 'ADD-POST';
 const ADD_NEW_POST_TEXT = 'ADD-NEW-POST-TEXT';
 const SET_FRIEND_PROFILE = 'SET_FRIEND_PROFILE';
@@ -43,4 +47,14 @@ const mainReducer = (state = initialState, action) => {
 export const addPosts = () => ({type: ADD_POST});
 export const setFriendsProfile = (main) => ({type: SET_FRIEND_PROFILE, main});
 export const updateNewPostText = (text) => ({type: ADD_NEW_POST_TEXT, newText: text});
+
+export const getFriendsProfile = (userId) => {
+    return (dispatch) => {
+        friendsAPI.getMain(userId).then(response => {
+            dispatch(setFriendsProfile(response.data));
+        });
+    }
+}
+
+
 export default mainReducer;
