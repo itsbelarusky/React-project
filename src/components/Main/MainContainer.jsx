@@ -2,7 +2,7 @@ import React from 'react';
 import Main from "./Main";
 import {connect} from "react-redux";
 import {getFriendsProfile} from "../../redux/main-reducer";
-import {withRouter} from "react-router-dom";
+import {Redirect, withRouter} from "react-router-dom";
 
 
 
@@ -17,6 +17,8 @@ class MainContainer extends React.Component {
     }
 
     render() {
+        if (!this.props.isAuth) return <Redirect to='/login'/>
+
         return (
             <div>
                 <Main {...this.props} main={this.props.main} />
@@ -26,7 +28,8 @@ class MainContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    main: state.mainPage.main
+    main: state.mainPage.main,
+    isAuth: state.auth.isAuth
 })
 
 let WithUrlDataContainerComponent = withRouter(MainContainer);
