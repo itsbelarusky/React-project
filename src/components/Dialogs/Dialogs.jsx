@@ -22,7 +22,7 @@ const Dialogs = (props) => {
         let newText = e.target.value;
         props.updateNewMessage(newText)
     }
-
+    //    ======================redirect на логин=======================
     if (!props.isAuth) return <Redirect to={"/login"}/>
 
     return (
