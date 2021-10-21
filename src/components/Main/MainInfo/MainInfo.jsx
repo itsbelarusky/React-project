@@ -13,7 +13,7 @@ const MainInfo = (props) => {
             <img src="https://cdn.pixabay.com/photo/2018/01/06/07/53/social-3064515_960_720.jpg" alt=""/>
             <div className={s.descriptionBlock}>
                 <img src={props.main.photos.small} className={s.mainFoto} />
-                <MainStatus status={"hello my friends"}/>
+                <MainStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
             <div>{props.main.aboutMe}</div>
             <div>{props.main.contacts.vk}</div>

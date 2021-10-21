@@ -22,11 +22,23 @@ export const friendsAPI = {
         return instance.delete(`follow/${userId}`)
     },
     getMain(userId) {
-        return instance.get(`profile/` + userId)
-
+        return MainAPI.getMain(userId)
     }
-
 }
+
+export const MainAPI = {
+    getMain(userId) {
+        return instance.get(`profile/` + userId);
+    },
+    getStatus(userId){
+        return instance.get(`profile/status/` + userId);
+    },
+    updateStatus(status){
+        return instance.put(`profile/status`, {status: status})
+    }
+}
+
+
 
 export const authAPI = {
     me(){

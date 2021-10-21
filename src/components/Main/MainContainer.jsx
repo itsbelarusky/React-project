@@ -1,42 +1,42 @@
 import React from 'react';
 import Main from "./Main";
 import {connect} from "react-redux";
-import {getFriendsProfile} from "../../redux/main-reducer";
-import {Redirect, withRouter} from "react-router-dom";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {getFriendsProfile, getStatus, updateStatus} from "../../redux/main-reducer";
+import {withRouter} from "react-router-dom";
+
 import {compose} from "redux";
-import Dialogs from "../Dialogs/Dialogs";
+
 
 
 class MainContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 2
+            userId = 19625
         }
         this.props.getFriendsProfile(userId)
+        this.props.getStatus(userId)
     }
 
     render() {
-
-
         return (
             <div>
-                <Main {...this.props} main={this.props.main}/>
+                <Main {...this.props} main={this.props.main} status={this.props.status} updateStatus={this.props.updateStatus}/>
             </div>
         )
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(MainContainer);
+
 
 let mapStateToProps = (state) => ({
     main: state.mainPage.main,
+    status: state.mainPage.status
 })
 
 export default compose(
-    connect(mapStateToProps, {getFriendsProfile}),
-    withRouter, withAuthRedirect)
+    connect(mapStateToProps, {getFriendsProfile, getStatus, updateStatus}),
+    withRouter)
 (MainContainer)
 
 

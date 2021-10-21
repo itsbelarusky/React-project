@@ -6,7 +6,7 @@ import MyPostsContainer from "./Myposts/MyPostsContainer";
 const Main = (props) => {
     return (
         <div>
-            <MainInfo main={props.main}/>
+            <MainInfo main={props.main} status={props.status} updateStatus={props.updateStatus}/>
             <MyPostsContainer />
         </div>
     )
