@@ -3,6 +3,7 @@ import s from './Dialogs.module.scss';
 import DialogsItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
 import {Redirect} from "react-router-dom";
+import {DialogsFormRedux} from "./DialogsForm";
 
 
 const Dialogs = (props) => {
@@ -14,14 +15,10 @@ const Dialogs = (props) => {
     let messageElements = state.messages.map(m => <Message message={m.message}/>);
     let newMessageText = state.newMessageText;
 
-    let addMessage = () => {
-        props.addMessage();
+    let addNewMessage = (values) => {
+        props.addMessage(values.newMessageText)
     }
 
-    let onMessageChange = (e) => {
-        let newText = e.target.value;
-        props.updateNewMessage(newText)
-    }
     //    ======================redirect на логин=======================
     if (!props.isAuth) return <Redirect to={"/login"}/>
 
@@ -33,12 +30,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 <div>{messageElements}</div>
             </div>
-            <div>
-                <textarea onChange={onMessageChange} value={newMessageText}/>
-                <div>
-                    <button onClick={addMessage}>add message</button>
-                </div>
-            </div>
+            <DialogsFormRedux onSubmit={addNewMessage} />
 
         </div>
     )

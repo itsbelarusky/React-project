@@ -1,22 +1,14 @@
 import React from 'react';
 import s from './MyPosts.module.scss';
 import Post from "./Post/Post";
-
-
-
+import {MyPostReduxForm} from "./MyPostForm";
 
 
 const MyPosts = (props) => {
 
-    let newPostElement = React.createRef();
-    /*================функция добавляющая новый пост в textarea===============*/
-    let addPosts = () => {
-        props.addPosts();
-    }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    let addNewPost = (values) => {
+        props.addPosts(values.newPostText);
     }
 
     /*==================мапим посты==========================*/
@@ -28,11 +20,7 @@ const MyPosts = (props) => {
             <div>
                 My posts
             </div>
-            <div>
-                {/*============ связываем textarea с функцией ссылкой===============*/}
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-            </div>
-            <button onClick={addPosts}>add</button>
+            <MyPostReduxForm onSubmit={addNewPost}/>
             {/*============Вызываем контент пропсов и добавляем посты на страницу==================*/}
             <div>
                 {postsElements}

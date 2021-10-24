@@ -3,7 +3,6 @@ import {friendsAPI, MainAPI} from "../Api/api";
 
 
 const ADD_POST = 'ADD-POST';
-const ADD_NEW_POST_TEXT = 'ADD-NEW-POST-TEXT';
 const SET_FRIEND_PROFILE = 'SET_FRIEND_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
@@ -13,7 +12,6 @@ let initialState = {
         {id: 2, message: 'IT Kamasutra', likesCount: 21},
         {id: 3, message: 'Diana go to the club', likesCount: 22}
     ],
-    newPostText: "",
     main: null,
     status: ""
 }
@@ -24,7 +22,7 @@ const mainReducer = (state = initialState, action) => {
         case ADD_POST:
             let newPost = {
                 id: 4,
-                message: state.newPostText,
+                message: action.newPostText,
                 likesCount: 1
             };
             //============Делаем копию массива=============
@@ -33,11 +31,6 @@ const mainReducer = (state = initialState, action) => {
                 posts: [...state.posts, newPost],
                 newPostText: ""
             };
-        case ADD_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText
-            }
         case SET_STATUS:
             return {
                 ...state,
@@ -51,9 +44,8 @@ const mainReducer = (state = initialState, action) => {
     }
 }
 
-export const addPosts = () => ({type: ADD_POST});
+export const addPosts = (newPostText) => ({type: ADD_POST, newPostText});
 export const setFriendsProfile = (main) => ({type: SET_FRIEND_PROFILE, main});
-export const updateNewPostText = (text) => ({type: ADD_NEW_POST_TEXT, newText: text});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 
 export const getFriendsProfile = (userId) => {
