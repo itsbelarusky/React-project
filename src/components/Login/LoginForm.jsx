@@ -3,15 +3,15 @@ import {Field} from "redux-form";
 import {Input} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../validators/validator";
 
-const maxInput15 = maxLengthCreator(15)
+const maxInput15 = maxLengthCreator(30)
 
 const LoginForm = (props) => {
     return (
         <div>
             <form onSubmit={props.handleSubmit}>
                 <div>
-                    <Field placeholder={"login"}
-                           name={"login"}
+                    <Field placeholder={"email"}
+                           name={"email"}
                            component={Input}
                            validate={[required, maxInput15]}
                     />
@@ -21,6 +21,7 @@ const LoginForm = (props) => {
                            name={"password"}
                            component={Input}
                            validate={[required, maxInput15]}
+                           type={"password"}
                     />
 
                 </div>
