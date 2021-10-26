@@ -12,7 +12,7 @@ class MainContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 19625
+            userId = this.props.authorizedUserId
         }
         this.props.getFriendsProfile(userId)
         this.props.getStatus(userId)
@@ -31,7 +31,9 @@ class MainContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     main: state.mainPage.main,
-    status: state.mainPage.status
+    status: state.mainPage.status,
+    authorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth
 })
 
 export default compose(
