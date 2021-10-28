@@ -16,7 +16,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
-import {withAuthRedirect} from "./hoc/withAuthRedirect";
+
 
 
 class App extends React.Component {

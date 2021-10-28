@@ -82,6 +82,7 @@ export const followingProgress = (isFetching, userId) => ({type: FOLLOWING_IN_PR
 export const getFriends = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(currentPage));
         friendsAPI.getFriends(currentPage, pageSize).then(data => {
             dispatch(toggleIsFetching(false));
             dispatch(setFriends(data.items));
