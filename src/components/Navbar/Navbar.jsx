@@ -12,7 +12,9 @@ const Navbar = (props) => {
                 Cloudchat.com
             </p>
             <div className={s.loginBlock}>
-                {props.isAuth ? <div>{props.login}<button onClick={props.logout}>Logout</button></div> : <NavLink to={'/login'}>Login</NavLink>}
+                {props.isAuth ? <div className={s.flexNav}>
+                    {props.login}<button onClick={props.logout}>Logout</button>
+                </div> : <NavLink to={'/login'}>Login</NavLink>}
 
             </div>
 

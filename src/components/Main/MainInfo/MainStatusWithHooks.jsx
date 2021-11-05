@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const MainStatusWithHooks = (props) => {
 
+    //================Хуки!!!================================
     let [edithMode, setEdithMode] = useState(false)
     let [status, setStatus] = useState(props.status)
+
+    useEffect(()=>{
+        setStatus(props.status)
+    },[props.status] );
 
     const activateEdithMod = () => {
         setEdithMode(true)

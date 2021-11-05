@@ -19,12 +19,17 @@
 }
 
 .loginBlock {
+  display: flex;
   margin-left: 75vh;
   text-transform: none;
 }
 .loginBlock a {
   color: #e3e5e7;
   text-decoration: none;
+}
+
+.flexNav {
+  display: flex;
 }
 
 /*# sourceMappingURL=Navbar.module.css.map */

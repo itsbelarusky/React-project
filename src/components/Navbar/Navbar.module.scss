@@ -25,6 +25,7 @@
 }
 
 .loginBlock {
+  display: flex;
   margin-left: 75vh;
   text-transform: none;
   a{
@@ -36,5 +37,8 @@
 
 
 
+}
+.flexNav{
+  display: flex;
 }
 
