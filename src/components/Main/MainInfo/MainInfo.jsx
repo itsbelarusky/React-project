@@ -4,24 +4,22 @@ import Preloader from "../../common/Preloader/Preloader";
 import MainStatusWithHooks from "./MainStatusWithHooks";
 
 
-const MainInfo = (props) => {
-    if(!props.main) {
+const MainInfo = ({main, status, updateStatus}) => {
+    if (!main) {
         return <Preloader/>
     }
     return (
         <div>
             <img src="https://cdn.pixabay.com/photo/2018/01/06/07/53/social-3064515_960_720.jpg" alt=""/>
             <div className={s.descriptionBlock}>
-                <img src={props.main.photos.small} className={s.mainFoto} />
-                <MainStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <img src={main.photos.small} className={s.mainFoto}/>
+                <MainStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
-            <div>{props.main.aboutMe}</div>
-            <div>{props.main.contacts.vk}</div>
-            <div>{props.main.fullName}</div>
+            <div>{main.aboutMe}</div>
+            <div>{main.contacts.vk}</div>
+            <div>{main.fullName}</div>
 
         </div>
-
-
 
 
     );

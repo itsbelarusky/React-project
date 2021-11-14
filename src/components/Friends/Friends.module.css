@@ -20,15 +20,6 @@
   margin: 0 0 20px 0;
 }
 
-.selectedPage {
-  font-weight: bold;
-  font-size: 20px;
-  color: red;
-}
-.selectedPage:hover {
-  cursor: pointer;
-}
-
 span {
   margin-right: 2px;
   font-weight: 600;
@@ -41,6 +32,18 @@ span:hover {
 .loader {
   width: 67px;
   height: 67px;
+}
+
+.paginator {
+  margin: 10px;
+}
+.paginator .selectedPage {
+  font-size: 100px;
+}
+
+.pageNumber {
+  padding: 2px;
+  border: 1px solid grey;
 }
 
 /*# sourceMappingURL=Friends.module.css.map */
