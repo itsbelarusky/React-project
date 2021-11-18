@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import s from "../../Friends/Friends.module.scss"
-
+import cn from "classnames";
 
 let Paginator = ({totalFriendsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
 
@@ -27,7 +27,7 @@ let Paginator = ({totalFriendsCount, pageSize, currentPage, onPageChanged, porti
         {
             pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map(p => {
-                    return <span className={({
+                    return <span className={cn({
                         [s.selectedPage] : currentPage === p
                     }, s.pageNumber) }
                                  key={p}
